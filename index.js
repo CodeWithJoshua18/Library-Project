@@ -3,12 +3,12 @@ function Book(title, author, pages, isRead) {
   this.author = author;
   this.pages = pages;
   this.isRead = isRead;
-
-  this.info = function () {
-    const readStatus = this.isRead ? "has been read" : "has not been read";
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
-  };
 }
+
+Book.prototype.info = function () {
+  const readStatus = this.isRead ? "has been read" : "has not been read";
+  return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
+};
 
 const myLibrary = [];
 
