@@ -1,13 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library System</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="header"></div>
 
- 
+    <form id="bookForm">
+      <input type="text" id="title" placeholder="Book Title" required />
+      <input type="text" id="author" placeholder="Author" required />
+      <input type="number" id="pages" placeholder="Pages" required />
+      <label>
+        Read:
+        <input type="checkbox" id="isRead" />
+      </label>
+      <button type="submit">Add Book</button>
+    </form>
+
+    <div id="library"></div>
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
