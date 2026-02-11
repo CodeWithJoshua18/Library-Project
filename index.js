@@ -1,14 +1,17 @@
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
+class Book{
+  constructor(title, author, pages, isRead){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
+
+  getInfo(){
+    const readStatus = this.isRead ? 'Has been read' : 'has not beeen read';
+    return`${this.title} by ${this.author}, which has ${this.pages} pages, ${readStatus}`
+  }
 }
 
-Book.prototype.info = function () {
-  const readStatus = this.isRead ? "has been read" : "has not been read";
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
-};
 
 const myLibrary = [];
 
@@ -42,11 +45,11 @@ function displayLibrary() {
   libraryDiv.innerHTML = ""; // clear previous display
   myLibrary.forEach((book, index) => {
     const bookDiv = document.createElement("div");
-    bookDiv.textContent = book.info();
+    bookDiv.textContent = book.getInfo();
     libraryDiv.appendChild(bookDiv);
   });
 }
-
+  
 // check how many books have been added to the array
 function updateBookCount() {
   const header = document.querySelector(".header");
